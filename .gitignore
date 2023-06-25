@@ -1,0 +1,4 @@
+.vscode/
+go-rss-aggregator
+.env
+thunder-tests
