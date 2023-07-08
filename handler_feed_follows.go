@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -30,7 +31,7 @@ func (cfg *apiConfig) handlerFeedFollowCreate(w http.ResponseWriter, r *http.Req
 		FeedID:    params.FeedID,
 	})
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Couldn't create feed follow")
+		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Couldn't create feed follow: %v", err))
 		return
 	}
 
@@ -40,7 +41,7 @@ func (cfg *apiConfig) handlerFeedFollowCreate(w http.ResponseWriter, r *http.Req
 func (cfg *apiConfig) handlerFeedFollowGet(w http.ResponseWriter, r *http.Request, user database.User) {
 	feedFollows, err := cfg.DB.GetFeedFollows(r.Context(), user.ID)
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Couldn't get feed follows")
+		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Couldn't get feed follow: %v", err))
 		return
 	}
 
@@ -60,7 +61,7 @@ func (cfg *apiConfig) handlerFeedFollowDelete(w http.ResponseWriter, r *http.Req
 		ID:     feedFollowID,
 	})
 	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Couldn't delete feed follow")
+		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Couldn't delete feed follow: %v", err))
 		return
 	}
 
