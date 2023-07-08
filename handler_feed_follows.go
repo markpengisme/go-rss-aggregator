@@ -11,6 +11,16 @@ import (
 	"github.com/markpengisme/go-rss-aggregator/internal/database"
 )
 
+func (cfg *apiConfig) handlerFeedFollowsGet(w http.ResponseWriter, r *http.Request, user database.User) {
+	feedFollows, err := cfg.DB.GetFeedFollows(r.Context(), user.ID)
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Couldn't get feed follow: %v", err))
+		return
+	}
+
+	respondWithJSON(w, http.StatusOK, databaseFeedFollowsToFeedFollows(feedFollows))
+}
+
 func (cfg *apiConfig) handlerFeedFollowCreate(w http.ResponseWriter, r *http.Request, user database.User) {
 	type parameters struct {
 		FeedID uuid.UUID `json:"feed_id"`
@@ -36,16 +46,6 @@ func (cfg *apiConfig) handlerFeedFollowCreate(w http.ResponseWriter, r *http.Req
 	}
 
 	respondWithJSON(w, http.StatusOK, databaseFeedFollowToFeedFollow(feedFollow))
-}
-
-func (cfg *apiConfig) handlerFeedFollowGet(w http.ResponseWriter, r *http.Request, user database.User) {
-	feedFollows, err := cfg.DB.GetFeedFollows(r.Context(), user.ID)
-	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Couldn't get feed follow: %v", err))
-		return
-	}
-
-	respondWithJSON(w, http.StatusOK, databaseFeedFollowsToFeedFollows(feedFollows))
 }
 
 func (cfg *apiConfig) handlerFeedFollowDelete(w http.ResponseWriter, r *http.Request, user database.User) {

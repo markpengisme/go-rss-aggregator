@@ -46,7 +46,6 @@ func (q *Queries) CreateFeedFollow(ctx context.Context, arg CreateFeedFollowPara
 }
 
 const deleteFeedFollow = `-- name: DeleteFeedFollow :exec
-
 DELETE FROM feed_follows WHERE id = $1 AND user_id = $2
 `
 
@@ -61,7 +60,6 @@ func (q *Queries) DeleteFeedFollow(ctx context.Context, arg DeleteFeedFollowPara
 }
 
 const getFeedFollows = `-- name: GetFeedFollows :many
-
 SELECT id, created_at, updated_at, user_id, feed_id FROM feed_follows WHERE user_id = $1
 `
 

@@ -1,0 +1,186 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "go-rss-aggregator",
+    "dateExported": "2023-07-08T06:45:51.750Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "f29e6408-7d5b-435a-9659-6fc1566cf13c",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/health",
+            "url": "http://localhost:8080/v1/health",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-07-08T05:54:07.552Z",
+            "modified": "2023-07-08T05:54:07.552Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "18f1d0d5-6652-4c77-8f0d-1a9947ffc579",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/users",
+            "url": "http://localhost:8080/v1/users",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-07-08T05:54:07.553Z",
+            "modified": "2023-07-08T05:54:07.553Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 452bde75b9bdacd8015854d0aa7cca6c991b8c271278e8f2017aafe81dee9411"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b0179da5-3daa-40cc-a102-171a0b80a4b3",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/users",
+            "url": "http://localhost:8080/v1/users",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-07-08T05:54:07.554Z",
+            "modified": "2023-07-08T05:54:07.554Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Mark\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1026509c-b125-442f-839e-107ad9cb0d28",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/feeds",
+            "url": "http://localhost:8080/v1/feeds",
+            "method": "GET",
+            "sortNum": 37500,
+            "created": "2023-07-08T05:54:07.555Z",
+            "modified": "2023-07-08T05:54:07.555Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7cc724d0-268e-4e64-b325-2d742715f312",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/feeds",
+            "url": "http://localhost:8080/v1/feeds",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-07-08T05:54:07.556Z",
+            "modified": "2023-07-08T05:54:07.556Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey b97555ed858738ffe76ed8ec6fd2683618234ff360c9a22d55324fc3411d9e34"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"example\",\n  \"url\": \"https://www.example.com/rss.xml\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bc9014e3-b476-43f6-9a8b-ef9185771392",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/feed_follows",
+            "url": "http://localhost:8080/v1/feed_follows",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-07-08T05:54:07.557Z",
+            "modified": "2023-07-08T05:54:07.557Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 452bde75b9bdacd8015854d0aa7cca6c991b8c271278e8f2017aafe81dee9411"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"feed_id\": \"5c6ad0df-49e0-49a4-bc45-249b834cfce3\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "755f43d0-ab2b-452e-b1d4-fb9a0c20f812",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/feed_follows",
+            "url": "http://localhost:8080/v1/feed_follows",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-07-08T05:54:07.558Z",
+            "modified": "2023-07-08T05:54:07.558Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 452bde75b9bdacd8015854d0aa7cca6c991b8c271278e8f2017aafe81dee9411"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "af4ab9c9-12bb-42d8-b78d-2be2e3a394a1",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/feed_follows",
+            "url": "http://localhost:8080/v1/feed_follows/7d1984f0-d6e0-4805-8b7b-2bf4344d1a0d",
+            "method": "DELETE",
+            "sortNum": 105000,
+            "created": "2023-07-08T05:54:07.559Z",
+            "modified": "2023-07-08T06:45:28.363Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 452bde75b9bdacd8015854d0aa7cca6c991b8c271278e8f2017aafe81dee9411"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b0789d4a-b5a0-45e9-9796-56b455594e38",
+            "colId": "c7ecf565-d262-4f58-ae95-97ecad984c4d",
+            "containerId": "",
+            "name": "http://localhost:8080/v1/posts",
+            "url": "http://localhost:8080/v1/posts?limit=1",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-07-08T05:54:07.560Z",
+            "modified": "2023-07-08T05:54:07.560Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 452bde75b9bdacd8015854d0aa7cca6c991b8c271278e8f2017aafe81dee9411"
+                }
+            ],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
